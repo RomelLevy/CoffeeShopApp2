@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+body {
+	/* background: linear-gradient(grey, black); */
+	/* height: 100%;
+	margin: 0;
+	background-repeat: no-repeat;
+	background-attachment: fixed; */
+	background-image: url(/images/drew-coffman-131609-unsplash.jpg);
+	background-size: cover;
+}
+
+.main{
+  text-align: center;
+  padding-top: 100px;
+  font-size: 12px;
+  color: black;
+  text-shadow: 0 0 7px #FFFFFF;
+	
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0px;
+	overflow: hidden;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: #F8F8FF;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	text-shadow: 0 0 3px #ffffff;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+	background-color: #bfbfbf;
+}
+
+h1{
+	color: #F8F8FF;
+	text-align: center;
+	text-shadow: 0 0 3px #ffffff;
+}
+
+
+
