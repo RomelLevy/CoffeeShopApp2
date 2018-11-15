@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="menu_item")
+//@Table(name="menu_item")
 public class MenuItem {
 
 	

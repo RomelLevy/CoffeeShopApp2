@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 ​<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
+<!-- <tag library JSTL ^^^^^^^^^-->
 <html>
 <head>
 <meta charset="UTF-8">
@@ -31,12 +32,8 @@
 				<td>${menuitem.category }</td>
 				<td>${menuitem.description }</td>
 				<td>${menuitem.price }</td>
-
 			</tr>
 		</c:forEach>
 	</table>
-
-	<!-- <a>add</a> -->
-
 </body>
 </html>

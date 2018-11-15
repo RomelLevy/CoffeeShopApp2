@@ -7,7 +7,28 @@
 <meta charset="UTF-8">
 <title>Summary</title>
 </head>
+<header>
+	<a href="/">Home</a>
+	
+	<span>
+	<c:choose>
+		<c:when test="${ not empty user }">
+			Welcome ${ user.firstname }
+			<a href="/logout">Logout</a>
+		</c:when>
+		<c:otherwise>
+			<a href="/login">Login</a>
+			<a href="/signup">Sign Up</a>
+		</c:otherwise>
+	</c:choose>
+	</span>
+</header>
+
+
+
+
 <body>
+${message }
 	<ul>
 		<li><a href="/registration">Back To Form</a></li>
 		<li><a href="/">Home</a></li>

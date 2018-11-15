@@ -56,10 +56,12 @@
 			<label for="lastname"><b>Last Name</b></label> <input type="text" placeholder="Enter Last Name" name="lastname" required>
 			
 			<label for="email"><b>Email</b></label> <input type="text" placeholder="Enter Email" name="email" required>
+			
+			<label for="username"><b>UserName</b></label> <input type="text" placeholder="Enter username" name="username" required>
 			 
 			<label for="password"><b>Password</b></label> <input type="password"placeholder="Enter Password" name="password" required> 
 			
-			<label for="password-repeat"><b>Repeat Password</b></label> <input type="password" placeholder="Repeat Password" name="password-repeat"required> 
+			<label for="password-repeat"><b>Repeat Password</b></label> <input type="password" placeholder="Repeat Password" name="confirm-password"required> 
 			
 			<label for="number"><b>Phone Number</b></label> <input type="number" placeholder="Enter Phone Number" name="number" required>
 			<br>
