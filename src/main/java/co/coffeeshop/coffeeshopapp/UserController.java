@@ -44,4 +44,36 @@ public class UserController {
 		return mv;
 	}
 
+	@RequestMapping("/login")
+	public ModelAndView showLoginForm() {
+		return new ModelAndView("login");
+	}
+
+	@PostMapping("/login")
+	// get the username and password from the form when it's submitted.
+	public ModelAndView submitLoginForm(@RequestParam("username") String username,
+			@RequestParam("password") String password, HttpSession session, RedirectAttributes redir) {
+		User user = userDao.findByUsername(username);
+		if (user == null) {
+			return new ModelAndView("login", "message", "incorrect username or password.");
+		}
+		if (!user.getPassword().equals(password)) {
+			return new ModelAndView("login", "message", "incorrect username or password.");
+		}
+		// login means add user to session
+		session.setAttribute("user", user);
+
+		redir.addFlashAttribute("message", "login succesfull. welcome back");
+
+		return new ModelAndView("redirect:/");
+	}
+
+	@RequestMapping("/logout")
+	public ModelAndView logout(HttpSession session, RedirectAttributes redir) {
+		session.invalidate();
+		redir.addFlashAttribute("message", "youve logged out. ");
+
+		return new ModelAndView("redirect:/");
+	}
+
 }

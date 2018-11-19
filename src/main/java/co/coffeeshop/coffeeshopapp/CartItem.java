@@ -8,6 +8,8 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class CartItem {
+	
+	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

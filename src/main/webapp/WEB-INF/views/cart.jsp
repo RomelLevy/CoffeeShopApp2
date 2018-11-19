@@ -4,12 +4,33 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link type="text/css" rel="stylesheet" href="menu.css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Menu</h1>
-	<table>
+<ul id="stuff">
+	<c:choose>
+		<c:when test="${ not empty user }">
+			Welcome ${ user.firstname }
+			<a href="/logout">Logout</a>
+		</c:when>
+		<c:otherwise>
+			<a href="/login">Login</a>
+		</c:otherwise>
+	</c:choose>
+</ul>
+
+<ul>
+        <li><a href="/">Home</a></li>
+		<li><a href="/menu">Menu</a></li>
+		<li><a href="/cart">Cart</a></li>
+		<li><a href="/registration">Become 50 Roasts Member</a></li>
+	</ul>
+	
+	
+	<h1>Cart</h1>
+	<table id="menu">
 		<tr>
 			<th>Id</th>
 			<th>Name</th>
@@ -17,16 +38,17 @@
 			<th>Description</th>
 			<th>Price</th>
 			<th>Quantity</th>
+			<th>Remove</th>
 		</tr>
 		<c:forEach var="cartitem" items="${ cartitems }">
 			<tr>
-				<td>${cartitem.menuitem.id }</td>
-				<td>${cartitem.menuitem.name }</td>
-				<td>${cartitem.menuitem.category }</td>
-				<td>${cartitem.menuitem.description }</td>
-				<td>${cartitem.menuitem.price }</td>
+				<td>${cartitem.menuItem.id }</td>
+				<td>${cartitem.menuItem.name }</td>
+				<td>${cartitem.menuItem.category }</td>
+				<td>${cartitem.menuItem.description }</td>
+				<td>${cartitem.menuItem.price }</td>
 				<td>${cartitem.quantity }</td>
-				<td><a href="/admin/menu/delete?id=${cartitem.menuitem.id }"
+				<td><a href="/admin/menu/delete?id=${cartitem.menuItem.id }"
 					class="btn btn-light btn-sm">Remove</a></td>
 			</tr>
 		</c:forEach>

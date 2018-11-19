@@ -4,19 +4,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link type="text/css" rel="stylesheet" href="menu.css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Admin</title>
 </head>
 <body>
 
 
-	<h1>Menu</h1>
+	<h1>Admin</h1>
 	<form>
 		<input name="category" placeholder="category" />
 		<button>Filter</button>
 	</form>
 
-	<table>
+	<table id="menu">
 		<tr>
 
 			<th>Id</th>

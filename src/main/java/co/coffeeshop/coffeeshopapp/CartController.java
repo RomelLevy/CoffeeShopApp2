@@ -1,5 +1,7 @@
 package co.coffeeshop.coffeeshopapp;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +16,7 @@ public class CartController {
 	@Autowired
 	private CoffeeMenuDao coffeeMenuDao;
 
+	// Adding items to cart.
 	@RequestMapping("/add-to-cart")
 	public ModelAndView addToCart(@RequestParam("id") Long menuItemId) {
 		MenuItem m = coffeeMenuDao.findById(menuItemId);
@@ -24,10 +27,18 @@ public class CartController {
 		return new ModelAndView("redirect:/cart");
 	}
 
+	// Showing items in cart.
 	@RequestMapping("/cart")
 	public ModelAndView showCart() {
-
-		ModelAndView mv = new ModelAndView("cart");
-		return mv;
+		List<CartItem> leListOfCartItems = cartItemDAO.findAll();
+		return new ModelAndView("cart", "cartitems", leListOfCartItems);
 	}
+
+	// Removing items from cart.
+	@RequestMapping("/remove-from-cart")
+	public ModelAndView delete(@RequestParam("id") Long id) {
+		cartItemDAO.delete(id);
+		return new ModelAndView("redirect:/cart");
+	}
+
 }
